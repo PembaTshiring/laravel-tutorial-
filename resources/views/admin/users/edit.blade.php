@@ -41,12 +41,24 @@
 			{!! Form::password('password',['class'=>'form-control'])!!}    
 	</div>
 
-	<div class="form-group">
-	{!!Form::submit('Create User',['class'=>'btn btn-primary']) !!}
+	<div class="row">
+		<div class="col-md-3">
+			<div class="form-group">
+			{!!Form::submit('Create User',['class'=>'btn btn-primary']) !!}
+			</div>
+			{!! Form::close() !!}
+			</div>
+		<div class="col-md-3">
+			{!! Form::open(['method'=>'DELETE','action'=>['AdminUsersController@destroy',$user->id], 'files'=>true]) !!}	
+			<div class="form-group">
+				{!!Form::submit('Delete User',['class'=>'btn btn-danger']) !!}
+			</div>
+			{!! Form::close() !!}
+		</div>
 	</div>
-	{!! Form::close() !!}
+
 </div>
-	</div>
+</div>
 <div class="row"> 
 @include('includes.form_error')
 </div>
