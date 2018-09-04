@@ -4,7 +4,7 @@
 	<h1>Edit User</h1>
 	<div class="row">
 	<div class="col-sm-3">
-		<img src="{{$user->photo ? $user->photo->file : 'https://via.placeholder.com/400x400' }}" alt="" class="img-responsive img-rounded">
+		<img src="{{$user->photo ? '../../../images/'.$user->photo->file : 'https://via.placeholder.com/400x400' }}" alt="" class="img-responsive img-rounded">
 	</div>
 	
 	<div class="col-sm-9">
