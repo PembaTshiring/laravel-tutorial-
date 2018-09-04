@@ -1,1 +1,5 @@
-<h1>Error 404 not found</h1>
+@extends('layouts.app')
+
+@section('content')
+    <h1 class="text-center">Oops............</h1>
+@endsection
