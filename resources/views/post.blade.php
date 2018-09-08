@@ -20,12 +20,13 @@
                 <hr>
 
                 <!-- Preview Image -->
-                <img class="img-responsive" src="../images/{{$post->photo->file}}" alt="">
+                <img class="img-responsive" src="{{'../images/'.$post->photo->file}} ? {{'../images/'.$post->photo->file}}:$post->photo->placeholder" alt="">
 
                 <hr>
 
                 <!-- Post Content -->
-                <p class="lead">{{$post->body}}</p>
+                {{-- not filtering to show images from the WYSIWYG editor --}}
+                <p class="lead">{!! $post->body !!}</p>
 
                 <hr>
                 @if (Session::has('comment_message'))
@@ -61,7 +62,7 @@
                 <!-- Comment -->
                 <div class="media">
                     <a class="pull-left" href="#">
-                        <img height="64" class="media-object" src="{{'../images/'.$comment->photo}}" alt="">
+                        <img height="64" class="media-object" src="Auth::user()->gravatar" alt="">
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading">{{$comment->author}}
